@@ -35,6 +35,11 @@ export default function GamePage() {
   const [userLoggedIn, setUserLoggedIn] = React.useState(false);
 
   React.useEffect(() => {
+    /**
+     * This module checks if the user is a repeat user and if so
+     * we setup the app for that user, otherwise, we show a startup
+     * screen for a new user to capture user info for persistency
+     */
     async function initialize() {
       const user = localStorage.getItem(USERNAME_KEY_LS);
       if (user) {
@@ -50,6 +55,11 @@ export default function GamePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  /**
+   * This function is called when a new user inputs his username
+   * and click on start button
+   */
+
   async function startGame() {
     if (userNameInput.length <= 0) return;
     const sUser = await addScoreToServer();
@@ -61,11 +71,23 @@ export default function GamePage() {
     userAction();
   }
 
+  /**
+   * In any erroenous situation, we remove the localstorage item and
+   * restore the app state to start like a fresh user
+   */
+
   function removeUserAndResetApp() {
     localStorage.removeItem(USERNAME_KEY_LS);
     setUserLoggedIn(false);
     setUserNameInput(initialState.name);
   }
+
+  /**
+   * This module fetches score from the server for the current user
+   * strips meta data and makes it available to be saved in app state.
+   * @param user -> name in string
+   * @returns user object stored on server
+   */
 
   async function fetchScore(user: string) {
     try {
