@@ -116,6 +116,11 @@ export default function GamePage() {
     }
   }
 
+  /**
+   * For a first time user, we are adding a new record to the database. 
+   * @returns user object stored on server
+   */
+
   async function addScoreToServer() {
     try {
       const score = { name: userNameInput, score: "0" };
@@ -137,6 +142,10 @@ export default function GamePage() {
     }
   }
 
+  /**
+   * Updates user score on the server
+   */
+
   async function updateScoreOnServer(score: number) {
     let sUser: any = serverUser;
     if (sUser) sUser.score = score + "";
@@ -147,6 +156,10 @@ export default function GamePage() {
     }
   }
 
+  /**
+   * This function is triggered at the beginning of the game load and
+   * every minute after that. It fetches the data, and has most of the gameplay logic
+   */
   const userAction = async () => {
     const response = await fetch(
       "https://api.coindesk.com/v1/bpi/currentprice.json"
