@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This app has been built with AWS Amplify and AWS AppSync to manage datastore operations. 
 
-This app has been deployed on AWS EC2 in here[http://13.250.172.207/] served via nginx. 
+This app has been deployed on AWS EC2 in [here](http://13.250.172.207/) served via nginx. 
 
 ## Available Scripts
 
