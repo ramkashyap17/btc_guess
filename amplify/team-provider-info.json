@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-btcgame-dev-61917-authRole",
+      "UnauthRoleArn": "arn:aws:iam::020905945175:role/amplify-btcgame-dev-61917-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::020905945175:role/amplify-btcgame-dev-61917-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-btcgame-dev-61917-deployment",
+      "UnauthRoleName": "amplify-btcgame-dev-61917-unauthRole",
+      "StackName": "amplify-btcgame-dev-61917",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:020905945175:stack/amplify-btcgame-dev-61917/8eca4e80-19ed-11ed-9ec7-0a969afd284e",
+      "AmplifyAppId": "d1ptw1m3xt3x97"
+    }
+  }
+}
