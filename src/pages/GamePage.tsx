@@ -51,9 +51,7 @@ export default function GamePage() {
   }, []);
 
   async function startGame() {
-    console.log("Triggered 1");
     if (userNameInput.length <= 0) return;
-    console.log("Triggered 1");
     const sUser = await addScoreToServer();
     localStorage.setItem("username", sUser.name);
     setServerUser(sUser);
@@ -71,7 +69,6 @@ export default function GamePage() {
 
   async function fetchScore(user: string) {
     try {
-      console.log("This is username: ", user);
       const scoresData: any = await API.graphql(
         graphqlOperation(listScores, {
           filter: {
@@ -122,7 +119,6 @@ export default function GamePage() {
     let sUser: any = serverUser;
     if (sUser) sUser.score = score + "";
     try {
-      console.log("This is the obj being updated: ", sUser);
       await API.graphql({ query: updateScore, variables: { input: sUser } });
     } catch (e) {
       console.log("Could not update the scores on the server", e);
